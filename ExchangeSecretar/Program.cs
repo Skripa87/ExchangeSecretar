@@ -13,10 +13,12 @@ namespace ExchangeSecretar
         /// </summary>
         static void Main()
         {
+            //ExchangeSecretarServiceTest test = new ExchangeSecretarServiceTest();
+            //test.TestStart(new string[0]);
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new ExchangeSecretarService()
             };
             ServiceBase.Run(ServicesToRun);
         }
