@@ -92,7 +92,7 @@ namespace ExchangeSecretar
                 Create_New_Client();
                 try
                 {
-                    Task task = new Task(() => { client.ExcecuteMasterFunction(new object[0]); });
+                    Task task = new Task(() => { client.MethodFirst(new object[0]); });
                     task.Start();
                     eventLog.WriteEntry("Поток исполнения сновной задачи службы запущен \n");
                 }

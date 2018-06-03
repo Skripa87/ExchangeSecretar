@@ -10,11 +10,11 @@ namespace WCFExchangeSecretarLibrary
     public interface IExchangeSecretarService
     {
         [OperationContract]
-        object[] ExcecuteMasterFunction(object[] parametrs);
+        object[] MethodFirst(object[] parametrs);
         [OperationContract]
-        object[] GetActualServiceParametrs(object[] parametrs);
+        object[] MethodTwo(object[] parametrs);
         [OperationContract]
-        object[] ChangeServiceParametrs(object[] parametrs);
+        object[] MethodThree(object[] parametrs);
         [OperationContract]
         object[] MethodForth(object[] parametrs);
     }
