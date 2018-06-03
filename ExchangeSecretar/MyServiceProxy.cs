@@ -10,15 +10,15 @@
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IExchangeSecretarService/MethodFirst", ReplyAction = "http://tempuri.org/IExchangeSecretarService/MethodFirstResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] MethodFirst(object[] parametrs);
+        object[] ExcecuteMasterFunction(object[] parametrs);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IExchangeSecretarService/MethodTwo", ReplyAction = "http://tempuri.org/IExchangeSecretarService/MethodTwoResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] MethodTwo(object[] parametrs);
+        object[] GetActualServiceParametrs(object[] parametrs);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IExchangeSecretarService/MethodThree", ReplyAction = "http://tempuri.org/IExchangeSecretarService/MethodThreeResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] MethodThree(object[] parametrs);
+        object[] ChangeServiceParametrs(object[] parametrs);
 
         [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IExchangeSecretarService/MethodForth", ReplyAction = "http://tempuri.org/IExchangeSecretarService/MethodForthResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
@@ -59,19 +59,19 @@
         {
         }
 
-        public object[] MethodFirst(object[] parametrs)
+        public object[] ExcecuteMasterFunction(object[] parametrs)
         {
-            return base.Channel.MethodFirst(parametrs);
+            return base.Channel.ExcecuteMasterFunction(parametrs);
         }
 
-        public object[] MethodTwo(object[] parametrs)
+        public object[] GetActualServiceParametrs(object[] parametrs)
         {
-            return base.Channel.MethodTwo(parametrs);
+            return base.Channel.GetActualServiceParametrs(parametrs);
         }
 
-        public object[] MethodThree(object[] parametrs)
+        public object[] ChangeServiceParametrs(object[] parametrs)
         {
-            return base.Channel.MethodThree(parametrs);
+            return base.Channel.ChangeServiceParametrs(parametrs);
         }
 
         public object[] MethodForth(object[] parametrs)

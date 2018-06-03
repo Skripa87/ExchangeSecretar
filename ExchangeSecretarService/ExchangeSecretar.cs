@@ -8,7 +8,7 @@ using System.Text;
 
 namespace WCFExchangeSecretarLibrary
 {
-    public class ExchangeSecretar
+    public class ExchangeSecretar:IDisposable
     {
         string exchangeServiceAddress;
         string targetEmailBoxAddress;
@@ -109,7 +109,7 @@ namespace WCFExchangeSecretarLibrary
                 {
                     if (item.TextBody.Text.Contains(it))
                     {
-                        speech.Speak("Уважаемый Алексей Романович вам пришла почта от " + item.Sender.Name + "в письме написано: " + item.TextBody.Text);
+                        speech.Speak("Уважаемый Алексей Романович вам пришла почта от " + item.Sender.Name + "в письме написано: " + item.TextBody.Text.Remove(item.TextBody.Text.IndexOf("Отправлено", 0)));
                         Collection<ItemId> bufferFoDeleted = new Collection<ItemId>();
                         bufferFoDeleted.Add(item.Id);
                         ServiceResponseCollection<ServiceResponse> response = exchangeService.DeleteItems(bufferFoDeleted, DeleteMode.SoftDelete, null, AffectedTaskOccurrence.AllOccurrences);
@@ -132,6 +132,15 @@ namespace WCFExchangeSecretarLibrary
         {
             GetExchangeSecretarReport();
             itemIds = null;
+            exchangeSecretarReport = null;
+            exchangeService = null;
+        }
+
+        public void Dispose()
+        {
+            itemIds = null;
+            exchangeSecretarReport = null;
+            exchangeService = null;
         }
     }
 }
