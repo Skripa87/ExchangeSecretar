@@ -140,8 +140,8 @@ namespace ExchangeSecretar
                 EndpointAddress endpoint = new EndpointAddress(new Uri(uri));
                 client = new ExchangeSecretarServiceClient(binding, endpoint);
                 client.ClientCredentials.Windows.ClientCredential.Domain = "";
-                client.ClientCredentials.Windows.ClientCredential.UserName = "skrip";
-                client.ClientCredentials.Windows.ClientCredential.Password = "PLUSHKAgasha777";                
+                client.ClientCredentials.Windows.ClientCredential.UserName = "";
+                client.ClientCredentials.Windows.ClientCredential.Password = "";                
             }
             catch (Exception ex)
             {
