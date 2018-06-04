@@ -17,8 +17,8 @@ namespace WCFExchangeSecretarLibrary
         private void SetDefaultServiceParametrs()
         {
             _parametrs[0] = "";
-            _parametrs[1] = "a.skrypin@krus-zapad.ru";
-            _parametrs[2] = "srvxH4#";
+            _parametrs[1] = "";
+            _parametrs[2] = "";
             _parametrs[3] = "привет;ключ";
         }
 
